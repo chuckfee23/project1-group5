@@ -1,0 +1,16 @@
+body {
+  background-image: url("../images/clay-banks-mIghSJJfWOc-unsplash.jpg");
+  min-height: 300px;
+  margin-bottom: 50px;
+}
+
+header {
+  margin: 50px 150px 50px 150px;
+}
+
+h1 {
+  color: whitesmoke;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-bottom: 25px;
+  text-decoration: underline;
+}
