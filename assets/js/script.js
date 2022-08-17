@@ -1,6 +1,6 @@
 ///////////////////////////////      Variable Declarations      ////////////////////////
 // Get elements with jQuery
-// search Button 
+// search Button
 var searchBtn = $("#button");
 // text area input for search
 var searchInput = $(".form-control");
@@ -49,11 +49,5 @@ function searchIngredient(data) {
 
 
 /////////////////////////////       Event handlers      ///////////////////////////
-
-
-
-
-
-
 
 //////////////////////////     Execute at lauch functions        ///////////////////////////////
