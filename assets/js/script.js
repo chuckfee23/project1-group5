@@ -80,7 +80,7 @@ function searchIngredient(ingredient) {
   }
   
   //only for testing purposes
-  getPhoto("broccoli");
+  getPhoto("almonds");
 
 
 
