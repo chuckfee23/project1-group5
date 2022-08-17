@@ -9,6 +9,8 @@ var nutriData = $("li");
 // Get element for name of ingredient
 var ingrName = $("#search-name");
 
+var imgCard = $(".card-img");
+
 
 ////////////////////////////////      Functions        ///////////////////////////////
 function searchIngredient(ingredient) {
@@ -53,7 +55,32 @@ function searchIngredient(ingredient) {
 //   Only for testing purposes 
   searchIngredient("almonds");
 
-
+  function getPhoto(input)
+  {
+      var api_key = "563492ad6f917000010000010e9c974a628f412faac80ae718c8039d";
+      const query = input;
+  
+      const settings = {
+          url:"https://api.pexels.com/v1/search?query=" + query + "&per_page=1",
+          method:"GET",
+          headers:
+          {
+              "AUTHORIZATION":api_key
+          }
+      }
+  
+      $.ajax(settings).then(function(response)
+      {
+          var obj = response.photos[0].src.original;
+          imgCard.attr("src", obj);
+          console.log(obj);
+          console.log(response)
+      })
+      
+  }
+  
+  //only for testing purposes
+  getPhoto("broccoli");
 
 
 
