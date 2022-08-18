@@ -119,14 +119,20 @@ function displaySearch() {
   var ingredientStorage = localStorage.getItem("ingredientStorage");
   ingredientStorage = JSON.parse(ingredientStorage);
 
+  ul.empty();
+
   if (ingredientStorage != null) {
-    for (var i = 0; i < ingredientStorage.length; i++) {
-      var createLi = document.createElement("li");
-      createLi.textContent = ingredientStorage[i];
-      ul.appendChild(createLi);
+    for (var i = 0; i < 5; i++) {
+      if(ingredientStorage[i] != null )
+      {
+        var createLi = document.createElement("li");
+        createLi.textContent = ingredientStorage[i];
+        ul.append(createLi);
+      }
     }
   }
 }
+
 /////////////////////////////       Event handlers      ///////////////////////////
 // Calls function searchIngredient when searchInput is entered into form
 // searchInput.on("submit", searchIngredient);
