@@ -89,7 +89,6 @@ function bothAPI(ingredient) {
   fetch(nutritionUrl).then(function (response) {
     return response.json().then(function (response) {
       if (response.totalWeight === 0) {
-        console.log(head);
         invalidText.attr("style", "color: red;");
         invalidText.attr("class", "card-body card");
         invalidText.text("Invalid Search Try Again");
@@ -99,6 +98,8 @@ function bothAPI(ingredient) {
         invalidText.attr("style", "display: none");
         searchIngredient(ingredient);
         getPhoto(ingredient);
+        saveSearch(ingredient);
+        displaySearch();
       }
     });
   });
@@ -142,6 +143,4 @@ searchBtn.on("click", () => {
   // console.log(input);
   bothAPI(input);
   searchInput.val("");
-  saveSearch(input);
-  displaySearch();
 });
