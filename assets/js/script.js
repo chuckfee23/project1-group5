@@ -11,7 +11,7 @@ var ingrName = $("#search-name");
 //Get element for image display
 var imgCard = $(".card-img");
 //Get searches UL list to append li
-var ul = document.querySelector("#searches");
+var ul = $("#searches");
 
 ////////////////////////////////      Functions        ///////////////////////////////
 function searchIngredient(ingredient) {
