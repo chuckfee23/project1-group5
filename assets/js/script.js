@@ -31,7 +31,7 @@ function searchIngredient(ingredient) {
         console.log(data);
         // Create array to store nutrient data
         var nutriArray = [
-            `Quanity: ${data.totalWeight} grams`,
+            `Quantity: ${data.totalWeight} grams`,
             `Calories: ${data.calories} cal`,
             `Fat: ${data.totalNutrients.FAT.quantity} grams`,
             `Protein: ${data.totalNutrients.PROCNT.quantity} grams`,
@@ -86,5 +86,15 @@ function searchIngredient(ingredient) {
 
 
 /////////////////////////////       Event handlers      ///////////////////////////
+// Calls function searchIngredient when searchInput is entered into form
+searchInput.on("submit", searchIngredient);
+// Calls Function searchIngredient and getPhotot when search.Btn is clicked
+searchBtn.on("click", ()=> {
+  searchIngredient();
+  getPhoto();
+});
+
+
+
 
 //////////////////////////     Execute at lauch functions        ///////////////////////////////
