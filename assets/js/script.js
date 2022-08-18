@@ -8,8 +8,10 @@ var searchInput = $(".form-control");
 var nutriData = $("li");
 // Get element for name of ingredient
 var ingrName = $("#search-name");
-
+//Get element for image display
 var imgCard = $(".card-img");
+//Get searches UL list to append li
+var ul = document.querySelector("#searches");
 
 ////////////////////////////////      Functions        ///////////////////////////////
 function searchIngredient(ingredient) {
@@ -55,7 +57,6 @@ function searchIngredient(ingredient) {
 function getPhoto(input) {
   var api_key = "563492ad6f917000010000010e9c974a628f412faac80ae718c8039d";
   const query = input;
-
   const settings = {
     url: "https://api.pexels.com/v1/search?query=" + query + "&per_page=1",
     method: "GET",
@@ -63,11 +64,34 @@ function getPhoto(input) {
       AUTHORIZATION: api_key,
     },
   };
-
   $.ajax(settings).then(function (response) {
     var obj = response.photos[0].src.original;
     imgCard.attr("src", obj);
   });
+}
+
+function saveSearch(input) {
+  var ingredientStorage = localStorage.getItem("ingredientStorage");
+  if (ingredientStorage === null) ingredientStorage = [];
+  else {
+    ingredientStorage = JSON.parse(ingredientStorage);
+  }
+  ingredientStorage.unshift(input);
+  var newIngredientAdded = JSON.stringify(ingredientStorage);
+  localStorage.setItem("ingredientStorage", newIngredientAdded);
+}
+
+function displaySearch() {
+  var ingredientStorage = localStorage.getItem("ingredientStorage");
+  ingredientStorage = JSON.parse(ingredientStorage);
+
+  if (ingredientStorage != null) {
+    for (var i = 0; i < ingredientStorage.length; i++) {
+      var createLi = document.createElement("li");
+      createLi.textContent = ingredientStorage[i];
+      ul.appendChild(createLi);
+    }
+  }
 }
 
 /////////////////////////////       Event handlers      ///////////////////////////
@@ -79,6 +103,9 @@ searchBtn.on("click", () => {
   // console.log(input);
   searchIngredient(input);
   getPhoto(input);
+  saveSearch(input);
+  displaySearch();
 });
 
 //////////////////////////     Execute at lauch functions        ///////////////////////////////
+displaySearch();
