@@ -28,7 +28,7 @@ function searchIngredient(ingredient) {
       })
       .then(function (data) {
         // get data for api and put into DOM
-        console.log(data);
+        
         // Create array to store nutrient data
         var nutriArray = [
             `Quantity: ${data.totalWeight} grams`,
@@ -52,8 +52,8 @@ function searchIngredient(ingredient) {
         console.log(e);
       });
   }
-//   Only for testing purposes 
-  searchIngredient("almonds");
+ 
+  
 
   function getPhoto(input)
   {
@@ -73,25 +73,26 @@ function searchIngredient(ingredient) {
       {
           var obj = response.photos[0].src.original;
           imgCard.attr("src", obj);
-          console.log(obj);
-          console.log(response)
+          
       })
       
   }
   
-  //only for testing purposes
-  getPhoto("almonds");
+  
+  
 
 
 
 
 /////////////////////////////       Event handlers      ///////////////////////////
 // Calls function searchIngredient when searchInput is entered into form
-searchInput.on("submit", searchIngredient);
+// searchInput.on("submit", searchIngredient);
 // Calls Function searchIngredient and getPhotot when search.Btn is clicked
 searchBtn.on("click", ()=> {
-  searchIngredient();
-  getPhoto();
+  var input = searchInput.val().trim();
+  // console.log(input);
+  searchIngredient(input);
+  getPhoto(input);
 });
 
 
