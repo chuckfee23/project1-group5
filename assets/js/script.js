@@ -8,12 +8,14 @@ var searchInput = $(".form-control");
 var nutriData = $("li");
 // Get element for name of ingredient
 var ingrName = $("#search-name");
-//gets element for picture
+//Get element for image display
 var imgCard = $(".card-img");
 //gets element for invalid search
 var head = $("header");
 //makes element for invalid search
 var invalidText = $("<div>");
+//Get searches UL list to append li
+var ul = $("#searches");
 
 ////////////////////////////////      Functions        ///////////////////////////////
 function searchIngredient(ingredient) {
@@ -101,6 +103,30 @@ function bothAPI(ingredient) {
     });
   });
 }
+
+function saveSearch(input) {
+  var ingredientStorage = localStorage.getItem("ingredientStorage");
+  if (ingredientStorage === null) ingredientStorage = [];
+  else {
+    ingredientStorage = JSON.parse(ingredientStorage);
+  }
+  ingredientStorage.unshift(input);
+  var newIngredientAdded = JSON.stringify(ingredientStorage);
+  localStorage.setItem("ingredientStorage", newIngredientAdded);
+}
+
+function displaySearch() {
+  var ingredientStorage = localStorage.getItem("ingredientStorage");
+  ingredientStorage = JSON.parse(ingredientStorage);
+
+  if (ingredientStorage != null) {
+    for (var i = 0; i < ingredientStorage.length; i++) {
+      var createLi = document.createElement("li");
+      createLi.textContent = ingredientStorage[i];
+      ul.appendChild(createLi);
+    }
+  }
+}
 /////////////////////////////       Event handlers      ///////////////////////////
 // Calls function searchIngredient when searchInput is entered into form
 // searchInput.on("submit", searchIngredient);
@@ -110,6 +136,6 @@ searchBtn.on("click", () => {
   // console.log(input);
   bothAPI(input);
   searchInput.val("");
+  saveSearch(input);
+  displaySearch();
 });
-
-//////////////////////////     Execute at lauch functions        ///////////////////////////////
