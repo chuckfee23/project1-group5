@@ -35,10 +35,10 @@ Have a clean repository that meets quality coding standards (file structure, nam
 - Micah Bottoms
     - [https://github.com/mbottoms3](https://github.com/mbottoms3)
 
-Gabriel Vasquez
+- Gabriel Vasquez
     - [https://github.com/LardexTheLarge](https://github.com/LardexTheLarge)
 
-Hallie Mestas
+- Hallie Mestas
     - [https://github.com/halliemestas](https://github.com/halliemestas)
 
 
