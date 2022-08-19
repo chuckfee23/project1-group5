@@ -24,15 +24,33 @@ Have a polished UI.
 Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id-naming conventions, indentation, quality comments, etc.).
 
 ```
+### Contributers
+
+- Charles Hargrove
+    - [https://github.com/chuckfee23](https://github.com/chuckfee23)
+
+- Matthew Yang
+    - [https://github.com/myang5t3r](https://github.com/myang5t3r)
+
+- Micah Bottoms
+    - [https://github.com/mbottoms3](https://github.com/mbottoms3)
+
+Gabriel Vasquez
+    - [https://github.com/LardexTheLarge](https://github.com/LardexTheLarge)
+
+Hallie Mestas
+    - [https://github.com/halliemestas](https://github.com/halliemestas)
+
+
 
 ### Technologies Used
 
 ```
 Bootstrap used for the CSS frame work
 
-API Library for Nutrition analysis: https://www.edamam.com/
+API Library for Nutrition analysis: [https://www.edamam.com/]
 
-API Library for images: https://www.pexels.com/discover/
+API Library for images: [https://www.pexels.com/discover/]
 
 
 
@@ -44,8 +62,15 @@ API Library for images: https://www.pexels.com/discover/
 
 ##### Live Link 
 
-Coming soon!
+[https://chuckfee23.github.io/project1-group5/]
 
 ###### Future Developments 
 
-Area to include suggested recipes for the searched ingredient.
+- API Upgrade
+    - Using free APIs can increase load times
+
+- Suggested recipes
+    - Use Recipe API to find meals with your target ingredients
+
+- Specified Units
+    - Use a dropdown unit selector, find totals for different quantities
