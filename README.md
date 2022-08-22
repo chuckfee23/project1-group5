@@ -62,7 +62,7 @@ API Library for images: [https://www.pexels.com/discover/]
 
 ##### Live Link 
 
-[https://chuckfee23.github.io/project1-group5/]
+https://chuckfee23.github.io/project1-group5/
 
 ###### Future Developments 
 
@@ -74,3 +74,7 @@ API Library for images: [https://www.pexels.com/discover/]
 
 - Specified Units
     - Use a dropdown unit selector, find totals for different quantities
+
+###### Presentation Link
+
+https://docs.google.com/presentation/d/1M3Andyr3u2MxLRYEdQv4pMhZ_X64up4tM1H71bA1pgE/edit?usp=sharing
